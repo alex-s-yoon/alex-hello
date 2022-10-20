@@ -1,0 +1,8 @@
+{
+    "apm": {
+        "enabled": false
+    },
+    "db": {
+        "uri": "mongors-alpha_mongo1:17017,mongors-alpha_mongo2:17018,mongors-alpha_mongo3:17019"
+    }
+}

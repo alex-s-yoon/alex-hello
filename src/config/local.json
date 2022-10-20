@@ -1,0 +1,9 @@
+{
+    "apm": {
+        "enabled": false
+    },
+    "db": {
+        "uri": "localhost:27017",
+        "opts": ""
+    }
+}

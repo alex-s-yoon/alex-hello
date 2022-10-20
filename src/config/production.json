@@ -1,0 +1,10 @@
+{
+    "logLevel": "info",
+    "apm": {
+        "enabled": true,
+        "uri": "http://apm-server:8200"
+    },
+    "messaging": {
+        "uri": "amqp://rabbitmq"
+    }
+}

@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  n4l-ci-tools: haolun-zhang-n4l/n4l-ci-tools@volatile
+
+workflows:
+  version: 2.1
+  test_build_push:
+    jobs:
+      - n4l-ci-tools/run_unit_tests:
+          context: Reporting-Development
+      - n4l-ci-tools/run_integration_tests:
+          context: Reporting-Development
+      - n4l-ci-tools/es_lint:
+          context: Reporting-Development
+      - n4l-ci-tools/determine_version:
+          context: Reporting-Development
+          requires:
+            - n4l-ci-tools/run_unit_tests
+            - n4l-ci-tools/es_lint
+            - n4l-ci-tools/run_integration_tests
+          filters:
+            branches:
+              ignore:
+                - /feature.*/
+                - /dependabot.*/
+      - n4l-ci-tools/build_and_push_image:
+          requires:
+            - n4l-ci-tools/run_unit_tests
+            - n4l-ci-tools/es_lint
+            - n4l-ci-tools/run_integration_tests
+            - n4l-ci-tools/determine_version
+          filters:
+            branches:
+              ignore:
+                - /feature.*/
+                - /dependabot.*/
+          context: Reporting-Development
+          repo: n4l/n4l-microservice-template

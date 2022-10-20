@@ -1,0 +1,12 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "N4L Microservice Template Docs",
+      "version": "0.0.0",
+      "description": "This is a microservice template and should be updated once implemented"
+    },
+    "schemes": ["https"]
+  },
+  "apis": ["./src/routes/*.js"]
+}

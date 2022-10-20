@@ -1,0 +1,12 @@
+{
+    "logLevel": "info",
+    "apm": {
+        "enabled": true
+    },
+    "db": {
+        "uri": "mongors-beta_mongo1:37017,mongors-beta_mongo2:37018,mongors-beta_mongo3:37019"
+    },
+    "messaging": {
+        "uri": "amqp://rabbitmq"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "apm": {
+        "enabled": false
+    },
+    "db": {
+        "uri": "mongodb:27017"
+    }
+}
